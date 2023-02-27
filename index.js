@@ -1,28 +1,28 @@
 const robot = require("robotjs");
 const args = process.argv;
 
-const runUntil = getRunUntil(args);
+function main() {
+  const runUntil = getRunUntil(args);
+  robot.setMouseDelay(2);
 
-robot.setMouseDelay(2);
-
-const twoPI = Math.PI * 2.0;
-const screenSize = robot.getScreenSize();
-const height = (screenSize.height / 2) - 10;
-const width = screenSize.width;
-let shouldRun = true;
-do
-{
-  for (let x = 0; x < width; x++)
+  const twoPI = Math.PI * 2.0;
+  const screenSize = robot.getScreenSize();
+  const height = (screenSize.height / 2) - 10;
+  const width = screenSize.width;
+  let shouldRun = true;
+  do
   {
-    y = height * Math.sin((twoPI * x) / width) + height;
-    robot.moveMouse(x, y);
-  }
-  let date = new Date().getTime();
-  shouldRun = date <= runUntil;
-} while(shouldRun)
+    for (let x = 0; x < width; x++)
+    {
+      y = height * Math.sin((twoPI * x) / width) + height;
+      robot.moveMouse(x, y);
+    }
+    let date = new Date().getTime();
+    shouldRun = date <= runUntil;
+  } while(shouldRun)
+}
 
 function getRunUntil(args) {
-
   if(args[2] <= 0 || isNaN(args[2]))
     throw new Error("Time argument is not valid.");
 
@@ -38,3 +38,5 @@ function getRunUntil(args) {
 
   return executionDate;
 }
+
+main();
