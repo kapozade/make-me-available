@@ -3,7 +3,6 @@ const args = process.argv;
 
 const runUntil = getRunUntil(args);
 
-
 robot.setMouseDelay(2);
 
 const twoPI = Math.PI * 2.0;
