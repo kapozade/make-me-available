@@ -37,16 +37,16 @@ const getRunUntil = (duration, unit) => {
   if(!unitTypes.includes(unit))
     throw new Error('Time unit argument is not valid.');
 
-  const timeInfo = unit === UnitTypes.Minute.name
+  const milliseconds = unit === UnitTypes.Minute.name
     ? UnitTypes.Minute.value
     : UnitTypes.Hour.value;
 
-  return calculateExecutionDate(duration, timeInfo);
+  return calculateExecutionDate(duration, milliseconds);
 }
 
-const calculateExecutionDate = (duration, timeInfo) => {
+const calculateExecutionDate = (duration, milliseconds) => {
   let executionDate = new Date().getTime();
-  executionDate += duration * timeInfo;
+  executionDate += duration * milliseconds;
 
   return executionDate;
 }
