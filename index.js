@@ -44,10 +44,10 @@ const getRunUntil = (duration, unit) => {
 }
 
 const calculateExpirationDate = (duration, milliseconds) => {
-  let executionDate = new Date().getTime();
-  executionDate += duration * milliseconds;
+  let expirationDate = new Date().getTime();
+  expirationDate += duration * milliseconds;
 
-  return executionDate;
+  return expirationDate;
 }
 
 main();
