@@ -19,10 +19,12 @@ const main = () => {
     {
       y = height * Math.sin((twoPI * x) / width) + height;
       robot.moveMouse(x, y);
-    }
 
-    let date = new Date().getTime();
-    shouldRun = date <= runUntil;
+      let date = new Date().getTime();
+      shouldRun = date <= runUntil;
+      
+      if(!shouldRun) break;
+    }
   }
 }
 
