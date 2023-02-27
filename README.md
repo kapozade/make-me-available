@@ -1,6 +1,6 @@
-# make-available-me
+# make-me-available
 
-Makes your mouse to move by programatically.
+Moves your mouse cursor programatically.
 
 ## Usages
 
