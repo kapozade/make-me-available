@@ -1,22 +1,26 @@
 {
-  "name": "make-available-me",
+  "name": "make-me-available",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=14.16.1",
+    "npm": ">=6.4.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kapozade/make-available-me.git"
+    "url": "git+https://github.com/kapozade/make-me-available.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kapozade/make-available-me/issues"
+    "url": "https://github.com/kapozade/make-me-available/issues"
   },
-  "homepage": "https://github.com/kapozade/make-available-me#readme",
+  "homepage": "https://github.com/kapozade/make-me-available#readme",
   "dependencies": {
     "robotjs": "0.6.0"
   }
