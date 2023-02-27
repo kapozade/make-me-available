@@ -31,9 +31,8 @@ const getRunUntil = (duration, unit) => {
   if(duration <= 0 || isNaN(duration))
     throw new Error("Time argument is not valid.");
 
-  const unitTypes = Object.keys(UnitTypes);
-  console.log(unitTypes);
   unit = unit.toUpperCase();
+  const unitTypes = Object.keys(UnitTypes);
   if(!unitTypes.includes(unit))
     throw new Error('Time unit argument is not valid.');
 
