@@ -32,14 +32,14 @@ const getRunUntil = (duration, unit) => {
     throw new Error("Time argument is not valid.");
 
   const unitTypes = Object.keys(UnitTypes);
-
+  console.log(unitTypes);
   unit = unit.toUpperCase();
   if(!unitTypes.includes(unit))
     throw new Error('Time unit argument is not valid.');
 
-  const milliseconds = unit === UnitTypes.Minute.name
-    ? UnitTypes.Minute.value
-    : UnitTypes.Hour.value;
+  const milliseconds = unit === UnitTypes.MINUTE.name || UnitTypes.M.name
+    ? UnitTypes.MINUTE.value
+    : UnitTypes.HOUR.value;
 
   return calculateExecutionDate(duration, milliseconds);
 }
