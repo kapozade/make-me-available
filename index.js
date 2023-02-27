@@ -40,10 +40,10 @@ const getRunUntil = (duration, unit) => {
     ? UnitTypes.MINUTE.value
     : UnitTypes.HOUR.value;
 
-  return calculateExecutionDate(duration, milliseconds);
+  return calculateExpirationDate(duration, milliseconds);
 }
 
-const calculateExecutionDate = (duration, milliseconds) => {
+const calculateExpirationDate = (duration, milliseconds) => {
   let executionDate = new Date().getTime();
   executionDate += duration * milliseconds;
 
