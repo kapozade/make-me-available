@@ -2,17 +2,16 @@ const robot = require('robotjs');
 const UnitTypes = require('./unit-types')
 
 const main = () => {
+  const twoPI = Math.PI * 2.0;
+  const screenSize = robot.getScreenSize();
+  const height = (screenSize.height / 2) - 10;
+  const width = screenSize.width;
   const args = process.argv;
   const runUntil = getRunUntil(args[2], args[3]);
 
   robot.setMouseDelay(2);
 
-  const twoPI = Math.PI * 2.0;
-  const screenSize = robot.getScreenSize();
-  const height = (screenSize.height / 2) - 10;
-  const width = screenSize.width;
   let shouldRun = true;
-
   while(shouldRun)
   {
     for (let x = 0; x < width; x++)
@@ -22,7 +21,7 @@ const main = () => {
 
       let date = new Date().getTime();
       shouldRun = date <= runUntil;
-      
+
       if(!shouldRun) break;
     }
   }

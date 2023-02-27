@@ -11,8 +11,4 @@ module.exports = class UnitTypes {
     this.name = name;
     this.value = value;
   }
-
-  toValue() {
-    return this.value;
-  }
 }
