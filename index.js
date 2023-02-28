@@ -2,11 +2,14 @@ const robot = require('robotjs');
 const UnitTypes = require('./unit-types')
 
 const main = () => {
+  const args = process.argv;
+  if(args.length != 4)
+    throw new Error("Invalid number of arguments to run. Example statement to run => `node index.js 5 m`");
+
   const twoPI = Math.PI * 2.0;
   const screenSize = robot.getScreenSize();
   const height = (screenSize.height / 2) - 10;
   const width = screenSize.width;
-  const args = process.argv;
   const runUntil = getRunUntil(args[2], args[3]);
 
   robot.setMouseDelay(2);
@@ -19,7 +22,7 @@ const main = () => {
       y = height * Math.sin((twoPI * x) / width) + height;
       robot.moveMouse(x, y);
 
-      let date = new Date().getTime();
+      let date = getCurrentTime();
       shouldRun = date <= runUntil;
 
       if(!shouldRun) break;
@@ -44,10 +47,14 @@ const getRunUntil = (duration, unit) => {
 }
 
 const calculateExpirationDate = (duration, milliseconds) => {
-  let expirationDate = new Date().getTime();
+  let expirationDate = getCurrentTime();
   expirationDate += duration * milliseconds;
 
   return expirationDate;
+}
+
+const getCurrentTime = () => {
+  return new Date().getTime();
 }
 
 main();
