@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/kapozade/make-me-available#readme",
   "dependencies": {
-    "robotjs": "0.6.0"
+    "robotjs": "^0.7.1"
   }
 }
