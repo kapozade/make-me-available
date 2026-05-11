@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/kapozade/make-me-available#readme",
   "dependencies": {
+    "chalk": "^4.1.2",
+    "cli-progress": "^3.12.0",
     "robotjs": "^0.7.1"
   }
 }
